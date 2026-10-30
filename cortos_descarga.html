@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cortos: descarga la app</title>
+<meta name="description" content="Cortos es una red social de videos cortos. Descarga el APK gratis para Android.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<style>
+:root{
+  --bg:#fbf8fa; --surface:#ffffff; --ink:#17141c; --dim:#5d5766; --line:rgba(23,20,28,.12);
+  --acc:#e5173f; --acc-ink:#ffffff; --teal:#0f8f76;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e0e12; --surface:#1b1b24; --ink:#f4f2f7; --dim:#a9a3b4; --line:rgba(255,255,255,.1);
+    --acc:#fe2c55; --teal:#25c2a0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e0e12; --surface:#1b1b24; --ink:#f4f2f7; --dim:#a9a3b4; --line:rgba(255,255,255,.1);
+  --acc:#fe2c55; --teal:#25c2a0; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:18px;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{display:flex;align-items:center;gap:10px;padding:20px 0;font-weight:800;font-size:22px}
+header i{width:30px;height:30px;border-radius:9px;background:var(--acc);display:grid;place-items:center}
+header i::after{content:"";width:0;height:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:28px 0 64px}
+h1{font-size:clamp(40px,7vw,76px);line-height:1;letter-spacing:-.03em;font-weight:800;margin:0 0 18px}
+.lead{font-size:clamp(18px,2.4vw,22px);color:var(--dim);max-width:30em;margin:0 0 28px}
+.dl{display:inline-flex;align-items:center;gap:12px;background:var(--acc);color:var(--acc-ink);text-decoration:none;font-weight:800;font-size:20px;padding:18px 28px;border-radius:16px;border:0;cursor:pointer;font-family:inherit;transition:transform .15s}
+.dl:hover{transform:translateY(-2px)}
+.dl:active{transform:scale(.98)}
+.dl svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.small{color:var(--dim);font-size:15px;margin:14px 0 0}
+#msg{color:var(--acc);font-weight:600;min-height:1.5em;margin:10px 0 0;font-size:16px}
+/* teléfono */
+.stage{display:grid;place-items:center}
+.phone{width:min(270px,70vw);aspect-ratio:9/18.5;border-radius:38px;background:#0e0e12;border:8px solid #26262f;position:relative;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);transform:rotate(3deg)}
+.screen{position:absolute;inset:0;background:linear-gradient(165deg,#ff7a59 0%,#fe2c55 45%,#5b2a86 100%)}
+.screen::before{content:"";position:absolute;left:50%;top:42%;width:64px;height:74px;background:rgba(255,255,255,.92);clip-path:polygon(0 0,100% 50%,0 100%);transform:translate(-35%,-50%)}
+.shade{position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.cap{position:absolute;left:14px;right:70px;bottom:20px;color:#fff;font-size:14px;line-height:1.35}
+.cap b{display:block;font-size:16px}
+.rail{position:absolute;right:12px;bottom:26px;display:flex;flex-direction:column;gap:14px;align-items:center;color:#fff;font-size:12px;font-weight:600}
+.rail span{display:grid;place-items:center;gap:2px}
+.rail em{font-style:normal;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.4);display:grid;place-items:center;font-size:18px}
+.heart{animation:pop .7s .6s ease-out 1}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
+.bar{position:absolute;left:0;top:0;height:4px;width:100%;background:rgba(255,255,255,.25)}
+.bar::after{content:"";display:block;height:100%;width:38%;background:#fff}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.02em;line-height:1.1;margin:0 0 26px;font-weight:800}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px 36px}
+.feat h3{margin:0 0 4px;font-size:20px}
+.feat p{margin:0;color:var(--dim);font-size:17px}
+ol{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:18px;max-width:640px}
+ol li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+ol li::before{content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font-weight:800}
+ol strong{display:block}
+ol span{color:var(--dim);font-size:16px}
+.safe{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;max-width:700px}
+.safe p{margin:0 0 10px;color:var(--dim)}
+.safe p:last-child{margin:0}
+footer{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--dim);font-size:15px}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;gap:34px;padding-bottom:44px}
+  .stage{order:-1}
+  .phone{transform:rotate(2deg);width:min(220px,58vw)}
+  .dl{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.heart{animation:none}.dl{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><i aria-hidden="true"></i>Cortos</header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Videos cortos de tu gente.</h1>
+        <p class="lead">Sube tus clips, mira lo que publican otros, da like, comenta y escribe por chat. Gratis y sin anuncios.</p>
+        <a class="dl" id="dl" href="#" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg>
+          Descargar para Android
+        </a>
+        <p id="msg" role="status"></p>
+        <p class="small">Archivo APK · Versión 1.7</p>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="phone">
+          <div class="screen"></div>
+          <div class="bar"></div>
+          <div class="shade"></div>
+          <div class="rail">
+            <span><em class="heart">♥</em>1,2 mil</span>
+            <span><em>💬</em>48</span>
+            <span><em>↗</em></span>
+          </div>
+          <div class="cap"><b>@maria</b>Tarde de plaza con los primos #humor</div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h2>Lo que puedes hacer</h2>
+      <div class="feat">
+        <div><h3>Subir tus cortos</h3><p>Pon título, descripción y etiquetas. Tu video se convierte solo para que cargue rápido.</p></div>
+        <div><h3>Mirar y reaccionar</h3><p>Desliza para cambiar de video, toca dos veces para dar like y guarda tus favoritos.</p></div>
+        <div><h3>Hablar con la gente</h3><p>Sigue a tus creadores, comenta y escribe mensajes privados.</p></div>
+        <div><h3>Tu perfil</h3><p>Elige tu foto, escribe tu bio y mira tus likes y seguidores.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cómo instalarla</h2>
+      <ol>
+        <li><div><strong>Descarga el archivo</strong><span>Toca el botón de arriba desde tu celular Android.</span></div></li>
+        <li><div><strong>Ábrelo y permite la instalación</strong><span>Si Android lo pide, activa “Instalar apps de este origen” para tu navegador.</span></div></li>
+        <li><div><strong>Crea tu usuario</strong><span>Entra, sube tu primer corto y comparte la app con tus amigos.</span></div></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Un espacio cuidado</h2>
+      <div class="safe">
+        <p>No se permite contenido sexual explícito, violencia ni acoso.</p>
+        <p>Cada video, comentario y perfil tiene un botón para reportar. Si un video recibe varios reportes, se oculta hasta que un moderador lo revise.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Cortos · Hecho por HectorXyt</footer>
+</div>
+
+<script>
+/* Pega aquí el enlace directo a tu APK (GitHub Releases, itch.io, Drive, etc.) */
+var APK_URL = "https://drive.google.com/uc?export=download&id=1botYiYbM1_9i4tnMP0N23St1Nk84i1sn";
+
+(function(){
+  var a = document.getElementById("dl"), m = document.getElementById("msg");
+  if (APK_URL) { a.href = APK_URL; }
+  a.addEventListener("click", function(e){
+    if (!APK_URL) {
+      e.preventDefault();
+      m.textContent = "La descarga todavía no está disponible. Vuelve pronto.";
+    }
+  });
+})();
+</script>
+</body>
+</html>
