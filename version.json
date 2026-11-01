@@ -1,13 +1,9 @@
 {
-  "version": 24,
-  "name": "2.4",
-  "url": "https://drive.google.com/file/d/15G9B62DIqDEBiiTxI_3oG8ZOsuEHXPrc/view?usp=drivesdk",
+  "version": 31,
+  "name": "3.1",
+  "url": "https://drive.google.com/file/d/1SSlG_X80eGYFQAdd98bmDIWc69_iEWz4/view?usp=drivesdk",
   "size_mb": 2,
   "force": false,
-  "notes": [
-    "Estudio: graba video y toma fotos dentro de la app",
-    "Filtros en vivo y editor de fotos",
-    "Nuevo aviso de actualizaciones con descarga integrada",
-    "Botones e interfaz renovados"
+  "notes": [Nuevas interfaz y opciones
   ]
 }
